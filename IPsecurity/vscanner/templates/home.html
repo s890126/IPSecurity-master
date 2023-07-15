@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+<!-- Add additional CSS in static file -->
+{% load static %}
+
+{% block content %}
+
+	<form action="output" method="post">
+		{% csrf_token %}
+		Input IP:
+		<input placeholder="input Ip address" type="text" name="param" required><br><br>		
+		<br>
+		<input type="submit" value="Search">
+	</form>
+	<form action="cve" method="post">
+		{% csrf_token %}
+		Input CVE:
+		<input placeholder="input CVE" type="text" name="cve" required><br><br>		
+		<br>
+		<input type="submit" value="Search">
+	</form>
+
+{% endblock %}
